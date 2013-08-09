@@ -1,0 +1,2 @@
+- Verbessere Namen von Methoden, Feldern und ähnlichem
+- mache Kommentare überflüssig durch Einführen von Methoden

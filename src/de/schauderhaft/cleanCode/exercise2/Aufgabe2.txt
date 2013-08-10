@@ -1,3 +1,5 @@
-Die Klasse LabelGenerator hat mehrere grund verschiedene Aufgaben
+Die Methode LabelGenerator.getLableStageInfo hat mehrere grundverschiedene Aufgaben
 - Welche?
-- Trenne die Klasse in meherer Klassen auf, die jeweils eine Aufgabe haben.
+- Trenne die Methode in meherer Methoden auf, die jeweils eine Aufgabe haben.
+
+Tipp: Dies erzeugt unter Umständen erhebliche Mengen Codeduplikation

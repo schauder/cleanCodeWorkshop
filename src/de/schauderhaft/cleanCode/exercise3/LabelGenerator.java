@@ -14,34 +14,66 @@ public class LabelGenerator {
         if (stageInfoLabel == null) {
             stageInfoLabel = new JLabel();
 
-            String text = getI18nText("lblStageInfoPrd");
-
-            try {
-                String importUrl = SrvParameterCache
-                        .getParameterAsString(SrvParameterCache.WEB_URL_DEFAULT);
-                if (!StringStatic.isEmptyOrNullValue(importUrl)) {
-                    importUrl = importUrl.toLowerCase();
-
-                    if (isTestInstance(importUrl)) {
-                        text = getI18nText("lblStageInfoTest");
-                    } else if (isQaInstance(importUrl)) {
-                        text = getI18nText("lblStageInfoQs");
-                    }
-                    // PRD-Instanz (oder neue, bzw. noch nicht bekannte
-                    // Instanz)
-                    else {
-                        stageInfoLabel.setVisible(false);
-                    }
-                }
-            } catch (Exception e) {
-                stageInfoLabel.setVisible(false);
-                e.printStackTrace();
-            }
-
-            stageInfoLabel.setText(text);
+            setLabelText();
+            setLabelVisibility();
         }
 
         return stageInfoLabel;
+    }
+
+    private void setLabelText() {
+        stageInfoLabel.setText(getLabelText());
+    }
+
+    private String getLabelText() {
+        String text = getI18nText("lblStageInfoPrd");
+
+        try {
+            String importUrl = SrvParameterCache
+                    .getParameterAsString(SrvParameterCache.WEB_URL_DEFAULT);
+            if (!StringStatic.isEmptyOrNullValue(importUrl)) {
+                importUrl = importUrl.toLowerCase();
+
+                if (isTestInstance(importUrl)) {
+                    text = getI18nText("lblStageInfoTest");
+                } else if (isQaInstance(importUrl)) {
+                    text = getI18nText("lblStageInfoQs");
+                }
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return text;
+    }
+
+    private void setLabelVisibility() {
+
+        Boolean visibility = getVisibility();
+
+        if (visibility != null)
+            stageInfoLabel.setVisible(visibility);
+    }
+
+    private boolean getVisibility() {
+        boolean visibility = true;
+        try {
+            String importUrl = SrvParameterCache
+                    .getParameterAsString(SrvParameterCache.WEB_URL_DEFAULT);
+            if (!StringStatic.isEmptyOrNullValue(importUrl)) {
+                importUrl = importUrl.toLowerCase();
+                if (isProductionInstance(importUrl)) {
+                    visibility = false;
+                }
+            }
+        } catch (Exception e) {
+            visibility = false;
+        }
+        return visibility;
+    }
+
+    private boolean isProductionInstance(String url) {
+        return !(isTestInstance(url) || isQaInstance(url));
     }
 
     private boolean isQaInstance(String url) {

@@ -8,13 +8,13 @@ import de.schauderhaft.cleanCode.stubs.Translator;
 
 public class LabelGenerator {
 
-    JLabel lblStageInfo;
+    JLabel stageInfoLabel;
 
     public JLabel getLblStageInfo() {
-        if (lblStageInfo == null) {
-            lblStageInfo = new JLabel();
+        if (stageInfoLabel == null) {
+            stageInfoLabel = new JLabel();
 
-            String text = _("lblStageInfoPrd");
+            String text = getI18nText("lblStageInfoPrd");
 
             try {
                 String importUrl = SrvParameterCache
@@ -23,47 +23,38 @@ public class LabelGenerator {
                     importUrl = importUrl.toLowerCase();
 
                     if (isTestInstance(importUrl)) {
-                        // Test
-                        text = _("lblStageInfoTest");
-                    }
-                    // QS-Instanz
-                    else if (isQaInstance(importUrl)) {
-                        // QS
-                        text = _("lblStageInfoQs");
+                        text = getI18nText("lblStageInfoTest");
+                    } else if (isQaInstance(importUrl)) {
+                        text = getI18nText("lblStageInfoQs");
                     }
                     // PRD-Instanz (oder neue, bzw. noch nicht bekannte
                     // Instanz)
                     else {
-                        // Produktiv nur anzeigen, wenn es nicht die
-                        // PRD-Instanz ist
-                        lblStageInfo.setVisible(false);
+                        stageInfoLabel.setVisible(false);
                     }
                 }
             } catch (Exception e) {
-                lblStageInfo.setVisible(false);
+                stageInfoLabel.setVisible(false);
                 e.printStackTrace();
             }
 
-            lblStageInfo.setText(text);
+            stageInfoLabel.setText(text);
         }
 
-        return lblStageInfo;
+        return stageInfoLabel;
     }
 
-    private boolean isQaInstance(String importUrl) {
-        return importUrl.contains("grglmrpfqs")
-                || importUrl.contains("gru23c12")
-                || importUrl.contains("sysglmqs")
-                || importUrl.contains("sysgmrpf-qs");
+    private boolean isQaInstance(String url) {
+        return url.contains("grglmrpfqs") || url.contains("gru23c12")
+                || url.contains("sysglmqs") || url.contains("sysgmrpf-qs");
     }
 
-    private boolean isTestInstance(String importUrl) {
-        return importUrl.contains("grglmrpft") || importUrl.contains("sysmrpt")
-                || importUrl.contains("gru23b12")
-                || importUrl.contains("gru23b13");
+    private boolean isTestInstance(String url) {
+        return url.contains("grglmrpft") || url.contains("sysmrpt")
+                || url.contains("gru23b12") || url.contains("gru23b13");
     }
 
-    private String _(String string) {
+    private String getI18nText(String string) {
 
         return Translator.translate(string);
     }

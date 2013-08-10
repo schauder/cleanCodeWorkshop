@@ -1,2 +1,3 @@
-- Verbessere Namen von Methoden, Feldern und ähnlichem
-- mache Kommentare überflüssig durch Einführen von Methoden
+Die Klasse LabelGenerator hat mehrere grund verschiedene Aufgaben
+- Welche?
+- Trenne die Klasse in meherer Klassen auf, die jeweils eine Aufgabe haben.

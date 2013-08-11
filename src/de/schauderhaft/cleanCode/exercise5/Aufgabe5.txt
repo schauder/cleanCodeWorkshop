@@ -1,1 +1,3 @@
-Der LabelGenerator hat ganz unterschiedliche Aufgaben, trenne diese in separate Klassen.
+Die Visibility- und TextStrategy manipulieren die url, beide auf gleiche Weise. Die sollte in den InstanceClassifier verschoben werden.
+
+Anschlieﬂend ist der InstanceClassifier zur refactoren, bis er funkelt.

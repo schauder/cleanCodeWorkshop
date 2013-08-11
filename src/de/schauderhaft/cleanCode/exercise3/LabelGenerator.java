@@ -49,11 +49,7 @@ public class LabelGenerator {
     }
 
     private void setLabelVisibility() {
-
-        Boolean visibility = getVisibility();
-
-        if (visibility != null)
-            stageInfoLabel.setVisible(visibility);
+        stageInfoLabel.setVisible(getVisibility());
     }
 
     private boolean getVisibility() {

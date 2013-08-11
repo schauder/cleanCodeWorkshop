@@ -14,15 +14,11 @@ public class LabelGenerator {
         if (stageInfoLabel == null) {
             stageInfoLabel = new JLabel();
 
-            setLabelText();
-            setLabelVisibility();
+            stageInfoLabel.setText(getLabelText());
+            stageInfoLabel.setVisible(getVisibility());
         }
 
         return stageInfoLabel;
-    }
-
-    private void setLabelText() {
-        stageInfoLabel.setText(getLabelText());
     }
 
     private String getLabelText() {
@@ -40,20 +36,11 @@ public class LabelGenerator {
                 } else if (isQaInstance(importUrl)) {
                     text = getI18nText("lblStageInfoQs");
                 }
-
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return text;
-    }
-
-    private void setLabelVisibility() {
-
-        Boolean visibility = getVisibility();
-
-        if (visibility != null)
-            stageInfoLabel.setVisible(visibility);
     }
 
     private boolean getVisibility() {

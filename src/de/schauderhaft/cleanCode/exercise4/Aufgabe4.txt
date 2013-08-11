@@ -1,0 +1,1 @@
+Der LabelGenerator hat ganz unterschiedliche Aufgaben, trenne diese in separate Klassen.

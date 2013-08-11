@@ -13,8 +13,8 @@ public class LabelGenerator {
         if (stageInfoLabel == null) {
             stageInfoLabel = new JLabel();
 
-            stageInfoLabel.setText(textGenerator.getText(this));
-            stageInfoLabel.setVisible(visabilityStrategy.getVisibility(this));
+            stageInfoLabel.setText(textGenerator.getText());
+            stageInfoLabel.setVisible(visabilityStrategy.getVisibility());
         }
 
         return stageInfoLabel;

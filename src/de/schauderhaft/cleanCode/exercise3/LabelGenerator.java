@@ -26,6 +26,7 @@ public class LabelGenerator {
     }
 
     private String getLabelText() {
+
         String text = getI18nText("lblStageInfoPrd");
 
         try {

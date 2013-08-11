@@ -1,0 +1,6 @@
+- getLblStageInfo() operiert auf unterschiedlichen Abstraktionsleveln: 
+	Einerseits wird konkret von JLabel gesprochen. 
+	In den beiden folgenden Methodenaufrufen wird aber darüber abstrahiert, was genau ein "Label" ist.
+- setLabelText und setLabelVisibility sehen aus wie setter, sind es aber nicht, stattdessen haben Sie Seiteneffekte.
+
+Ein kleines Refactoring löst diese Probleme.

@@ -1,3 +1,4 @@
-Die Visibility- und TextStrategy manipulieren die url, beide auf gleiche Weise. Die sollte in den InstanceClassifier verschoben werden.
+Die Visibility- und TextStrategy manipulieren die URL, beide auf gleiche Weise.
+Diese Funktionalit‰t sollte in den InstanceClassifier verschoben werden.
 
-Anschlieﬂend ist der InstanceClassifier zur refactoren, bis er funkelt.
+Anschlieﬂend ist der InstanceClassifier zu refactoren, bis er funkelt.

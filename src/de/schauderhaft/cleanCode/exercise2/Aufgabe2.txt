@@ -1,5 +1,5 @@
-Die Methode LabelGenerator.getLableStageInfo hat mehrere grundverschiedene Aufgaben
+Die Methode LabelGenerator.getLableStageInfo hat mehrere grundverschiedene Aufgaben.
 - Welche?
-- Trenne die Methode in meherer Methoden auf, die jeweils eine Aufgabe haben.
+- Trenne die Methode in mehere Methoden auf, die jeweils eine Aufgabe haben.
 
-Tipp: Dies erzeugt unter Umständen erhebliche Mengen Codeduplikation
+Tipp: Dies erzeugt unter Umständen erhebliche Mengen Codeduplikation.

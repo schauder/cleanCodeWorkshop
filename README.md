@@ -2,7 +2,7 @@ Clean Code Workshop
 =================
 
 
-== Ressourcen ==
+## Ressourcen ##
 
 [Clean Code](http://www.amazon.de/gp/product/0132350882?ie=UTF8&camp=3206&creative=21426&creativeASIN=0132350882&linkCode=shr&tag=schauderhafte-21&=books-intl-de&qid=1377854002&sr=1-1&keywords=clean+code)
 [Refactoring](http://www.amazon.de/gp/product/0201485672?ie=UTF8&camp=3206&creative=21426&creativeASIN=0201485672&linkCode=shr&tag=schauderhafte-21&=books-intl-de&qid=1377854050&sr=1-1&keywords=Refactoring)

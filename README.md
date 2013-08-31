@@ -17,6 +17,8 @@ Clean Code Workshop
 ### Web-Links ###
 [Clean Coders](http://www.clean-code-developer.de/)
 
+[Code Retreat](http://coderetreat.org/)
+
 [Beispiel Legacy Code für Legacy Code Retreats](https://github.com/jbrains/trivia)
 
 [Code Katas](http://codekata.pragprog.com/2007/01/code_kata_backg.html#more)

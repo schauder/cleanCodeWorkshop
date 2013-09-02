@@ -1,4 +1,4 @@
-package de.schauderhaft.cleanCode.stubs;
+ypackage de.schauderhaft.cleanCode.stubs;
 
 public class StringStatic {
 
